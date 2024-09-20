@@ -1,22 +1,24 @@
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
-type TileProps = {
-    width: number
-    height: number
+type FloatElementProps = {
     radiusX: number
     radiusY: number
     speed: number
     initialAngle: number
+    children?: ReactNode
+    className?: string
+    bgColor?: string
 }
 
-function Tile({
-    width,
-    height,
+function FloatElement({
     radiusX,
     radiusY,
     speed,
     initialAngle,
-}: TileProps) {
+    children,
+    className,
+    bgColor,
+}: FloatElementProps) {
     const [angle, setAngle] = useState(initialAngle)
 
     useEffect(() => {
@@ -32,14 +34,15 @@ function Tile({
 
     return (
         <div
-            className={`transition-custom absolute rounded-xl bg-[#4D595C] duration-1000`}
+            className={`transition-custom absolute rounded-xl duration-1000 ${className ?? ''}`}
             style={{
-                width: width / 4 + 'rem',
-                height: height / 4 + 'rem',
                 transform: `translate(${x}px, ${y}px)`,
+                backgroundColor: bgColor ?? '',
             }}
-        ></div>
+        >
+            {children}
+        </div>
     )
 }
 
-export default Tile
+export default FloatElement

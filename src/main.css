@@ -6,3 +6,9 @@
     transition-property: all;
     transition-timing-function: linear;
 }
+.header-text {
+    font-size: 36px;
+}
+.tech-stack:hover .logos {
+    @apply opacity-100;
+}
