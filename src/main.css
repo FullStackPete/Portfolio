@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transition-custom {
+    transition-property: all;
+    transition-timing-function: linear;
+}
