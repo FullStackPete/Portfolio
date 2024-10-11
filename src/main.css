@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+    @apply bg-slate-900;
+}
 .transition-custom {
     transition-property: all;
     transition-timing-function: linear;

@@ -1,97 +1,68 @@
 import reactLogo from '../assets/react.svg'
-import FloatElement from '../components/FloatElement'
-import SpringBoot from '../assets/spring.png'
-import TechStackItem from '../components/TechStackItem'
-import TailwindCSS from '../assets/tailwind.png'
-import Dotnet from '../assets/NET_Core_Logo.svg.png'
-import Java from '../assets/java-svgrepo-com.svg'
-import Vue from '../assets/vue.png'
-import nuxt from '../assets/nuxt.js.png'
-import Typescript from '../assets/Typescript.png'
+import CardElement from '../components/CardElement'
 import Ekodoniczka from '../assets/screenshot-20240920-152311.png'
+import { useState } from 'react'
+import TechStackCard from '../components/TechStackCard'
 function Home() {
+    const [spin, setSpin] = useState<boolean>(true)
+    // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    //     setSpin(e.target.checked)
+    // }
     return (
         <div className="flex h-screen w-screen items-center justify-center bg-slate-900">
-            <img
-                src={reactLogo}
-                className="animate-spin-slow left-0 top-0 m-4 w-48"
-                alt="React logo"
-            />
-            <FloatElement
-                bgColor="#4D595C"
-                className="p-4 hover:shadow-xl hover:shadow-violet-300"
-                radiusX={250}
-                radiusY={250}
-                speed={0.1}
-                initialAngle={0}
-            >
-                <div className="flex animate-pulse flex-col gap-4 transition-all duration-1000 hover:scale-125">
-                    <div className="flex flex-row items-center">
-                        <div className="h-12 w-12 rounded-full bg-gray-400"></div>
-
-                        <div className="ml-4 h-6 w-32 rounded-2xl bg-gray-400"></div>
-                    </div>
-                    <div className="w-70 h-10 rounded-2xl bg-gray-400"></div>
-                    <div className="w-70 h-10 rounded-2xl bg-gray-400"></div>
-                </div>
-            </FloatElement>
-            <FloatElement
-            className='tech-stack'
-                radiusX={250}
-                radiusY={250}
-                speed={0.1}
-                initialAngle={60}
-            >
-                <p className="header-text cursor-default text-center font-bold text-cyan-300 transition-all duration-1000">
+            {/* <div className="absolute top-10">
+                <input
+                    checked={spin}
+                    type="checkbox"
+                    onChange={(e) => handleChange(e)}
+                    name="no-spin"
+                    id=""
+                />
+                <label htmlFor="no-spin" className="text-white">
+                    Spin enabled
+                </label>
+            </div> */}
+            <div className="relative flex items-center justify-center">
+                <img
+                    src={reactLogo}
+                    className={`m-4 w-32 ${spin ? 'animate-spin-slow' : ''}`}
+                    alt="React logo"
+                />
+                <p className="header-text w-max absolute top-14 right-40 cursor-default text-center font-bold text-cyan-300 transition-all duration-1000">
                     Fullstack developer
                 </p>
-                <div className="flex flex-col ">
-                    <p className="header-text  cursor-default text-center font-bold text-pink-300 transition-all duration-1000">
-                        Tech Stack
-                    </p>
-                    <div className="logos transtion-all mt-4 grid grid-cols-4 opacity-0 duration-1000">
-                        <TechStackItem src={SpringBoot} label={'Spring'} />
-                        <TechStackItem src={reactLogo} label={'React.js'} />
-                        <TechStackItem
-                            src={TailwindCSS}
-                            label={'TailwindCSS'}
-                        />
-                        <TechStackItem src={Dotnet} label={'.NET'} />
-                        <TechStackItem src={Java} label={'Java'} />
-                        <TechStackItem src={Typescript} label={'Typescript'} />
-                        <TechStackItem src={Vue} label={'Vue.js'} />
-                        <TechStackItem src={nuxt} label={'Nuxt.js'} />
+                <CardElement
+                    bgColor="#4D595C"
+                    className="bottom-40 right-40 p-4 hover:shadow-xl hover:shadow-violet-300"
+                >
+                    <p className="text-white">Download CV</p>
+                    <div className="flex animate-pulse cursor-pointer flex-col gap-4 transition-all duration-1000 hover:scale-[110%]">
+                        <div className="flex flex-row items-center">
+                            <div className="h-12 w-12 rounded-full bg-gray-400"></div>
+
+                            <div className="ml-4 h-6 w-32 rounded-2xl bg-gray-400"></div>
+                        </div>
+                        <div className="w-70 h-10 rounded-2xl bg-gray-400"></div>
+                        <div className="w-70 h-10 rounded-2xl bg-gray-400"></div>
                     </div>
-                </div>
-            </FloatElement>
-            <FloatElement
-                radiusX={160}
-                radiusY={160}
-                speed={0.1}
-                initialAngle={100}
-            ></FloatElement>
+                </CardElement>
 
-            <FloatElement
-                className="p-4"
-                radiusX={250}
-                radiusY={250}
-                speed={0.1}
-                initialAngle={-80}
-            ></FloatElement>
+                <TechStackCard />
 
-            <FloatElement
-                className="p-4"
-                radiusX={250}
-                radiusY={250}
-                speed={0.1}
-                initialAngle={-130}
-                bgColor="#4D595C"
-            >
-                <p className="text-center text-2xl mb-2 font-semibold text-white">
-                    Ecodoniczka.pl
-                </p>
-                <img src={Ekodoniczka} className="w-64 rounded-lg object-cover h-36 object-top" alt="" />
-            </FloatElement>
+                <CardElement
+                    className="right-36 top-32 w-72 p-4 hover:cursor-pointer hover:shadow-xl hover:shadow-violet-300"
+                    bgColor="#4D595C"
+                >
+                    <p className="mb-2 text-center text-2xl font-semibold text-white">
+                        Ecodoniczka.pl
+                    </p>
+                    <img
+                        src={Ekodoniczka}
+                        className="h-36 w-64 rounded-lg object-cover object-top"
+                        alt=""
+                    />
+                </CardElement>
+            </div>
         </div>
     )
 }
