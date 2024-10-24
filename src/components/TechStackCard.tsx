@@ -10,9 +10,15 @@ import Typescript from '../assets/Typescript.png'
 import reactLogo from '../assets/react.svg'
 function TechStackCard() {
     return (
-        <CardElement className="tech-stack absolute -left-8 top-[18.5rem] z-10 w-max">
-            <div className="flex flex-col">
-                <p className="header-text cursor-default text-center font-bold text-pink-300 transition-all duration-1000">
+        <CardElement className="tech-stack absolute left-8 top-[8.5rem] z-10 w-max">
+            <div className="flex flex-col text-left">
+                <p className="header-text w-[30rem] cursor-default font-bold text-indigo-300 transition-all duration-1000">
+                    Information Technology Student
+                </p>
+                <p className="header-text w-max cursor-default font-bold text-orange-300 transition-all duration-1000">
+                    Front-end developer
+                </p>
+                <p className="header-text cursor-default font-bold text-pink-300 transition-all duration-1000">
                     Tech Stack
                 </p>
                 <div className="logos transtion-all mt-4 grid grid-cols-4 opacity-0 duration-1000">

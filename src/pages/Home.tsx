@@ -3,36 +3,24 @@ import CardElement from '../components/CardElement'
 import Ekodoniczka from '../assets/screenshot-20240920-152311.png'
 import { useState } from 'react'
 import TechStackCard from '../components/TechStackCard'
+import HeaderSection from '../components/HeaderSection'
 function Home() {
     const [spin, setSpin] = useState<boolean>(true)
-    // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    //     setSpin(e.target.checked)
-    // }
     return (
         <div className="flex h-screen w-screen items-center justify-center bg-slate-900">
-            {/* <div className="absolute top-10">
-                <input
-                    checked={spin}
-                    type="checkbox"
-                    onChange={(e) => handleChange(e)}
-                    name="no-spin"
-                    id=""
-                />
-                <label htmlFor="no-spin" className="text-white">
-                    Spin enabled
-                </label>
-            </div> */}
+            <HeaderSection />
             <div className="relative flex items-center justify-center">
                 <img
                     src={reactLogo}
                     className={`m-4 w-32 ${spin ? 'animate-spin-slow' : ''}`}
                     alt="React logo"
                 />
-                <p className="header-text w-max absolute top-14 right-40 cursor-default text-center font-bold text-cyan-300 transition-all duration-1000">
+                <p className="header-text absolute right-40 top-14 w-max cursor-default text-center font-bold text-cyan-300 transition-all duration-1000">
                     Fullstack developer
                 </p>
+                <p className="header-text absolute right-40 top-4 w-max cursor-default text-center font-bold text-cyan-300 transition-all duration-1000"></p>
                 <CardElement
-                    bgColor="#4D595C"
+                    bgColor="#000000"
                     className="bottom-40 right-40 p-4 hover:shadow-xl hover:shadow-violet-300"
                 >
                     <p className="text-white">Download CV</p>
@@ -46,12 +34,10 @@ function Home() {
                         <div className="w-70 h-10 rounded-2xl bg-gray-400"></div>
                     </div>
                 </CardElement>
-
                 <TechStackCard />
-
                 <CardElement
                     className="right-36 top-32 w-72 p-4 hover:cursor-pointer hover:shadow-xl hover:shadow-violet-300"
-                    bgColor="#4D595C"
+                    bgColor="#000000"
                 >
                     <p className="mb-2 text-center text-2xl font-semibold text-white">
                         Ecodoniczka.pl
